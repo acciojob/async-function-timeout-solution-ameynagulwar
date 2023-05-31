@@ -7,12 +7,8 @@ const output = document.getElementById("output");
 async function showMessage() {
   const message = text.value;
   const delayVal = delay.value;
- await new Promise((resolve) => {
-    setTimeout(() => {
-        resolve(`${message}`);
-    },delayVal)
- })
- output.innerHTML = message
+  await new Promise((resolve) => setTimeout(resolve, delayVal));
+  output.innerText = message;
 }
 
 btn.addEventListener("click", showMessage);
